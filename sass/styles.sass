@@ -1,0 +1,180 @@
+//import grids from bulma
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700')
+@import "reset.sass"
+@import "partials/_variables.sass"
+@import "partials/_mixins.sass"
+@import "../bulma/sass/utilities/_all.sass"
+@import "../bulma/sass/grid/_all.sass"
+
+
+p
+ font:
+  family: $font-family
+  size: $font-size-m
+
+ &.title
+  font-size: $font-size-l
+  line-height: $font-lh-l
+  letter-spacing: 0.1rem
+ &.title-xl
+  font:
+   size: $font-size-xxl
+   weight: $font-weight-r
+  line-height: $font-lh-xxl
+  letter-spacing: $font-ls-l
+ &.label
+  font:
+   size: $font-size-m
+   weight: $font-weight-r
+  color: $mediumgrey
+  text-transform: $font-uppercase
+ &.annotation
+  font:
+   size: $font-size-m
+   weight: $font-weight-r
+   style: italic
+  line-height: $font-lh-m
+  padding: $padding-m
+  color: $mediumgrey
+
+
+
+
+
+//universal styles
+
+
+* 
+ font-family: sans-serif
+ text-align: center
+ box-sizing: border-box
+
+html
+ font-family: $font-family
+ font-size: $font-size-base
+
+body 
+ margin: $padding-m
+ padding: $padding-m
+ // overflow: hidden
+ // border: 1px solid $neutralgrey
+
+
+//links
+a 
+ @include links
+
+//video
+video 
+ object-fit: cover
+ position: absolute
+ height: 100%
+ width: 100%
+ top: 0
+ left: 0
+ z-index: -10
+
+
+
+//input
+label
+ font-size: $font-size-m
+ text-transform: $font-uppercase
+
+input
+ font-family: $font-family
+ padding: $padding-s
+ font-size: $font-size-m
+ border: 1px solid $white
+ border-bottom: 1px dotted $neutralgrey
+ &::placeholder 
+  font-family: $font-family
+  color: $mediumgrey
+  font-style: italic
+ &:hover
+  border-bottom: 1px dotted $textgrey
+ &:focus
+  outline: none
+
+
+
+//top nav area
+.nav
+ padding: $padding-m 0
+ img 
+  max-width: 50%
+//dropping zone
+.content 
+ // border: 1px solid $mediumgrey
+ background: $white
+ height: 100%
+.verb
+ height: 60px
+.noun
+ height: 180px
+
+
+
+//tiles
+.tiles
+ padding: $padding-l
+ // border: $border-l
+ height: 70vh
+ min-height: 480px
+ background: rgba(255, 255, 255, 0.8)
+
+
+//card container
+.card 
+ border: $border-b
+ height: 70vh
+ min-height: 480px
+ box-shadow: 0 2px 2px 0 $lightgrey
+ background: $white
+
+ .header
+  color: $white
+  padding: $padding-xxl $padding-s
+  background: $black
+
+ .name
+  padding: $padding-l
+  border-bottom: $border-b
+
+ .address
+  padding: $padding-l
+
+
+
+
+
+// base ball cards content drag container
+.collection 
+ display: inline-block
+ height: auto
+ cursor: move
+
+
+//individual card
+.container 
+ // min-width: 80px
+ // min-height: 80px
+ display: inline-block
+ background: $bggrey
+ color: $textgrey
+ border: $border-b
+ margin: $padding-xs
+ padding: $padding-s
+ 
+ &:hover
+  transform: scale(1.1)
+  background: $black
+  color: $white
+  box-shadow: 0 2px 2px 0 $lightgrey
+  transition: 0.2s
+
+
+
+
+
+

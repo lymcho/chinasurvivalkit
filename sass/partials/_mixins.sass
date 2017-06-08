@@ -1,0 +1,23 @@
+@mixin inline-block
+ display: inline-block
+ position: relative
+ vertical-align: middle 
+
+// @mixin placeholder
+//  &::-webkit-input-placeholder 
+//   @content
+//  &:-moz-placeholder  /* Firefox 18- */
+//   @content
+//  &::-moz-placeholder   /* Firefox 19+ */
+//   @content
+//  &:-ms-input-placeholder 
+//   @content
+    
+@mixin links
+ color: $black
+ text-decoration: underline
+ &:hover, visited
+  background: $black
+  color: $white
+  transition: $transition-time
+  text-decoration: none
