@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".content").sortable(),$(".collection .container").draggable({connectToSortable:".content",helper:"clone"}),$(".collection").droppable({drop:function(e,n){$(n.draggable).parent().hasClass("content")&&$(n.draggable).remove()}})});

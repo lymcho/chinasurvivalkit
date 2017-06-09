@@ -3,6 +3,7 @@
 @import "reset.sass"
 @import "partials/_variables.sass"
 @import "partials/_mixins.sass"
+@import "partials/_animation.sass"
 @import "../bulma/sass/utilities/_all.sass"
 @import "../bulma/sass/grid/_all.sass"
 
@@ -15,7 +16,7 @@ p
  &.title
   font-size: $font-size-l
   line-height: $font-lh-l
-  letter-spacing: 0.1rem
+  letter-spacing: 0rem
  &.title-xl
   font:
    size: $font-size-xxl
@@ -34,12 +35,11 @@ p
    weight: $font-weight-r
    style: italic
   line-height: $font-lh-m
-  padding: $padding-m
+  padding: $padding-s
   color: $mediumgrey
-
-
-
-
+  &:hover 
+   transform: scale(1.02)
+   transition: $transition-time
 
 //universal styles
 
@@ -52,29 +52,21 @@ p
 html
  font-family: $font-family
  font-size: $font-size-base
+ overflow: scroll
+ overflow-x: hidden
+ &::-webkit-scrollbar 
+  width: 0px /* remove scrollbar space */
+  background: transparen /* optional: just make scrollbar invisible */
 
 body 
- margin: $padding-m
- padding: $padding-m
- // overflow: hidden
- // border: 1px solid $neutralgrey
+ margin: 0 auto
+ padding: $padding-xxl
+ width: 93%
 
 
 //links
 a 
  @include links
-
-//video
-video 
- object-fit: cover
- position: absolute
- height: 100%
- width: 100%
- top: 0
- left: 0
- z-index: -10
-
-
 
 //input
 label
@@ -97,52 +89,97 @@ input
   outline: none
 
 
-
 //top nav area
 .nav
  padding: $padding-m 0
+ width: 100%
+ position: relative
+
  img 
-  max-width: 50%
-//dropping zone
-.content 
- // border: 1px solid $mediumgrey
- background: $white
- height: 100%
-.verb
- height: 60px
-.noun
- height: 180px
+  max-width: 40%
+  display: inline-block
+ .how
+  cursor: pointer
+  // display: flex
+  // flex-flow: column wrap
+.instructions
+ position: absolute
+ margin-left: auto
+ margin-right: auto
+ top: 25rem
+ left: 0
+ right: 0
+ max-width: 800px
+ z-index: 10
+ width: auto
+ padding: $padding-xxl
+ height: auto
+ color: $white
+ background: $red
+ transition: 200ms transform ease-in-out
+ transform: rotatex(90deg)
+ transform-origin: middle
+.nav:hover .instructions
+ transform: rotatex(0deg)
+ background: $black
+ transition: $transition-time 
+ background: $red
+
+
+
+
+
+
+
 
 
 
 //tiles
-.tiles
- padding: $padding-l
- // border: $border-l
- height: 70vh
- min-height: 480px
- background: rgba(255, 255, 255, 0.8)
+.wrapper
+ // padding: $padding-xs
 
+ display: flex
+ flex-flow: row wrap
+ // border: $border-
+ background: $black
+
+
+//dropping zone
+.content 
+ flex: 1
+ // border: 1px solid $mediumgrey
+ width: 28rem
+ background: $white
+ height: 40rem
+ padding: $padding-s
+
+
+
+
+ 
+
+//wrapper for the tiles
+.tiles
+ flex: 2
+ padding: $padding-m
+ // background: $blue
 
 //card container
 .card 
  border: $border-b
- height: 70vh
- min-height: 480px
- box-shadow: 0 2px 2px 0 $lightgrey
+ // height: 540px
+ // min-height: 480px
  background: $white
-
  .header
-  color: $white
-  padding: $padding-xxl $padding-s
-  background: $black
-
- .name
-  padding: $padding-l
+  padding: $padding-xl $padding-s
   border-bottom: $border-b
 
- .address
-  padding: $padding-l
+ .form
+  padding: $padding-xl
+  border-bottom: $border-b
+  &:hover
+   background: $red
+   color: $white
 
 
 
@@ -150,13 +187,14 @@ input
 
 // base ball cards content drag container
 .collection 
- display: inline-block
- height: auto
- cursor: move
+
+
+ 
 
 
 //individual card
 .container 
+ cursor: move
  // min-width: 80px
  // min-height: 80px
  display: inline-block
@@ -165,14 +203,23 @@ input
  border: $border-b
  margin: $padding-xs
  padding: $padding-s
- 
  &:hover
-  transform: scale(1.1)
-  background: $black
+  transform: scale(1.2)
+  background: $red
+  border: $border-r
   color: $white
-  box-shadow: 0 2px 2px 0 $lightgrey
+  // box-shadow: 2px 2px 0px 2px $white
   transition: 0.2s
 
+
+
+
+
+
+//animated shadow pop
+.shadow-pop-tr
+ -webkit-animation: shadow-pop-tr 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both
+ animation: shadow-pop-tr 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both
 
 
 
